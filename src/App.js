@@ -1,10 +1,10 @@
 import React from 'react';
-import {Route, Switch, Link , BrowserRouter as Router} from 'react-router-dom';
-import WineMenue from "./components/WineMenue"
+import {Route, Switch, Link , BrowserRouter as Router} from "react-router-dom";
+import WineMenue from "./components/WineMenue";
 import './App.css';
 
 class App extends React.Component {
-  constructoctor(props){
+  constructor(props){
     super(props);
   }
 
@@ -18,27 +18,27 @@ class App extends React.Component {
            <Link to="/">Main Page</Link>
          </li>
          <li>
-           <Link to="/4871">CHATEAU DE SAINT COSME</Link>
+           <Link to="/4871">Chateau De Saint Cosme</Link>
          </li>
          <li>
-         <Link to="/4872">LAN RIOJA CRIANZA</Link></li>
+         <Link to="/4872">Lan Rioja Crianza</Link></li>
          <li>
-         <Link to="/4873">MARGERUM SYBARITE</Link>
+         <Link to="/4873">Margerum Sybarite</Link>
          </li>
          <li>
-           <Link to="/4874">OWEN ROE "EX UMBRIS</Link>
+           <Link to="/4874">Owen Roe "Ex Umbris"</Link>
          </li>
          <li>
-           <Link to="/4875">REX HILL</Link>
+           <Link to="/4875">Rex Hill</Link>
          </li>
          <li>
-           <Link to="/4876">VITICCIO CLASSICO RISERVA</Link>
+           <Link to="/4876">Viticcio Classico Riserva</Link>
          </li>
          <li>
-           <Link to="/4877">CHATEAU LE DOYENNE</Link>
+           <Link to="/4877">Chateau Le Doyenne</Link>
          </li>
          <li>
-           <Link to="/4878">DOMAINE DU BOUSCAT</Link>
+           <Link to="/4878">Domaine Du Bouscat</Link>
          </li>
        </ul>
      </nav>
