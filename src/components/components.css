@@ -1,0 +1,21 @@
+h3{
+    font-family: 'Eagle Lake', cursive;
+    font-size: 30px;
+    color: rgb(10, 77, 10);
+
+}
+p{
+    font-family: 'Eagle Lake', cursive;
+    color: rgb(10, 77, 10);
+    font-size: 20px;
+}
+img{
+    border-radius: 75px;
+    border: dotted darkgreen 3px;
+width: 150px;
+height: auto;
+}
+input{
+    background-color: rgb(105, 172, 105);
+    color: rgb(195, 240, 187);
+}

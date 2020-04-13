@@ -9,6 +9,9 @@ import DeleteWine from "./components/DeleteWine";
 class App extends React.Component {
   constructor(props){
     super(props);
+    this.state={
+      wineId: ["/4897"]
+    }
   }
 
   render(){
@@ -52,17 +55,13 @@ class App extends React.Component {
        </ul>
      </nav>
      <Switch>
-       <Route path="/" exact component={"/"}>
-         <MainPage />
+       <Route path="/" exact component={MainPage}>
        </Route>
-       <Route path="/4896" exact component={"/4896"}>
-         <One />
+       <Route path="/" exact component={One}>
        </Route>
-       <Route path="/4897" exact component={"/4897"}>
-         <Two />
+       <Route path="/4897" exact component={Two}>
        </Route>
-       <Route path="/4898" exact component={"/4898"}>
-         <Three />
+       <Route path="/4898" exact component={Three}>
        </Route>
        <Route path="/4899" exact component={"/4899"}>
          <Four />
@@ -94,7 +93,7 @@ class App extends React.Component {
 
 function MainPage(){
   return (<div>
-    <h1>Wlcome to wine menue</h1>
+    <h1>Welcome to wine menue</h1>
     <h2>Please choose wine</h2>
     <AllWines />
 
