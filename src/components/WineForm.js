@@ -60,28 +60,31 @@ class WineForm extends React.Component{
       submitButton(event){
         event.preventDefault();
         axios.post("https://myapi-profstream.herokuapp.com/api/462a60/wines",this.state)
-        
+        .then(res => {
+          console.log(res);
+      })
+      .catch(e => {console.log(e);}) 
       }
         render(){
           return (
           <div className="App">
            <form onSubmit={this.submitButton}>
              <p>Enter wine name</p>
-             <input type='text' onChange={this.nameHandler} placeholder="wine name"/>
+             <input type='text' value= {this.state.name} onChange={this.nameHandler} placeholder="wine name"/>
              <p>Enter wine url link</p>
-             <input type='text' onChange={this.pictureURLHandler} placeholder="picture url"/>
+             <input type='text' value= {this.state.pictureURL} onChange={this.pictureURLHandler} placeholder="picture url"/>
              <p>Enter year</p>
-             <input type='text' onChange={this.yearHandler} placeholder="year"/>
+             <input type='text' value= {this.state.year} onChange={this.yearHandler} placeholder="year"/>
              <p>Enter type of grapes</p>
-             <input type='text' onChange={this.grapesHandler} placeholder="grapes type"/>
+             <input type='text' value= {this.state.grapes} onChange={this.grapesHandler} placeholder="grapes type"/>
              <p>Enter contry of origin</p>
-             <input type='text' onChange={this.countryHandler} placeholder="country"/>
+             <input type='text' value= {this.state.country} onChange={this.countryHandler} placeholder="country"/>
              <p>Enter region of origin</p>
-             <input type='text' onChange={this.regionHandler}  placeholder="region"/>
+             <input type='text' value= {this.state.region} onChange={this.regionHandler}  placeholder="region"/>
              <p>Enter price of wine</p>
-             <input type='text' onChange={this.priceHandler}  placeholder="price"/>
+             <input type='text' value= {this.state.price} onChange={this.priceHandler}  placeholder="price"/>
              <p>Enter wine description</p>
-             <input type='text'onChange={this.descriptionHandler}  placeholder="description"/>
+             <input type='text' value= {this.state.description} onChange={this.descriptionHandler}  placeholder="description"/>
            <input type="submit" />
            </form>
           </div>

@@ -6,27 +6,31 @@ class DeleteWine extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            id:""
+            wineid:""
           }
           this.wineIdHandler=this.wineIdHandler.bind(this);
         }
             wineIdHandler(event) {
+            this.setState({wineid: event.target.value});
             event.preventDefault();
-            this.setState({id: event.target.value});
-            
           }
           
-       submitButton(event){
-        event.preventDefault();
-        axios.delete(`http://myapi-profstream.herokuapp.com/api/462a60/wines/${this.state.id}`)
+       
+      render(){
+let id=this.state.wineid;
+
+function submitButton(event){
+         event.preventDefault();
+        axios.delete(`https://myapi-profstream.herokuapp.com/api/462a60/wines/${id}`)
+        .then(res=>
+            console.log(res.status))
+        .catch(err=>console.log(err))
       }
-      
-        render(){
           return (
           <div className="App">
-           <form onSubmit={this.submitButton}>
+           <form onSubmit={submitButton}>
              <p>Enter wine Id</p>
-             <input type='text'   onChange={this.wineIdHandler} placeholder="wine id"/>
+             <input type='text'  onChange={this.wineIdHandler} placeholder="wine id"/>
            <input type="submit" />
            </form>
           </div>
