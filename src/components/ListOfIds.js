@@ -14,7 +14,7 @@ class ListOfIds extends React.Component{
     
     async getWineList(){
         try{
-            const list= await axios.get(`https://myapi-profstream.herokuapp.com/api/462a60/wines/`)
+            const list= await axios.get(`http://myapi-profstream.herokuapp.com/api/466840/wines`)
             this.setState({wineList: list.data});
         }
         catch(error){
