@@ -59,9 +59,8 @@ class WineForm extends React.Component{
             event.preventDefault();
           }
       submitButton(event){
-        const key=process.env.REACT_APP_API_KEY_WINE;
         event.preventDefault();
-        axios.post(`http://myapi-profstream.herokuapp.com/api/${key}/wines`,this.state)
+        axios.post(`http://myapi-profstream.herokuapp.com/api/466840/wines`,this.state)
         .then(res => {
           console.log(res);
       })
