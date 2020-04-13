@@ -25,8 +25,8 @@ class ListOfIds extends React.Component{
         this.getWineList();
     }
     checkIfWineExists(){
-    if(this.state.wineList===null){
-        return "Sorry, information is not availiable or wine has been deleted.";
+        if(this.state.wineList===null){
+            return "Sorry, information is not availiable or wine has been deleted.";
     }
     else{
         return (<div>

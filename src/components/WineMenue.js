@@ -28,20 +28,20 @@ componentDidMount(){
     this.getWineList();
 }
 checkIfWineExists(){
-if(this.state.wineList===null){
-    return "Sorry, information is not availiable or wine has been deleted.";
+    if(this.state.wineList===null){
+        return "Sorry, information is not availiable or wine has been deleted.";
 }
 else{
     return (<div>
-            <h3>{this.state.wineList.name}</h3>
-            <img src={this.state.wineList.picture} alt="wine" />
-            <p>Year: {this.state.wineList.year}</p>
-            <p>Grapes: {this.state.wineList.grapes}</p>
-            <p>Country: {this.state.wineList.country}</p>
-            <p>Region: {this.state.wineList.region}</p>
-            <p>Price: {this.state.wineList.price}</p>
-            <p>Desctiption: {this.state.wineList.description}</p> 
-            <p>Wine Id: {this.state.wineList.id}</p> 
+                <h3>{this.state.wineList.name}</h3>
+                <img src={this.state.wineList.picture} alt="wine" />
+                <p>Year: {this.state.wineList.year}</p>
+                <p>Grapes: {this.state.wineList.grapes}</p>
+                <p>Country: {this.state.wineList.country}</p>
+                <p>Region: {this.state.wineList.region}</p>
+                <p>Price: {this.state.wineList.price}</p>
+                <p>Desctiption: {this.state.wineList.description}</p> 
+                <p>Wine Id: {this.state.wineList.id}</p> 
             </div>)
 }
 }

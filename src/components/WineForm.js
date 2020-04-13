@@ -7,14 +7,14 @@ class WineForm extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            name:"",
+             name:"",
              year:"",
              grapes:"",
              country:"",
-            region: "",
+             region: "",
              pictureURL:"",
-            price: "",
-            description: ""
+             price: "",
+             description: ""
           }
           this.nameHandler=this.nameHandler.bind(this);
           this.pictureURLHandler=this.pictureURLHandler.bind(this);
@@ -68,25 +68,41 @@ class WineForm extends React.Component{
       }
         render(){
           return (
-          <div className="App">
+          <div>
            <form onSubmit={this.submitButton}>
-             <p>Enter wine name</p>
-             <input type='text' value= {this.state.name} onChange={this.nameHandler} placeholder="wine name"/>
-             <p>Enter wine url link</p>
-             <input type='text' value= {this.state.pictureURL} onChange={this.pictureURLHandler} placeholder="picture url"/>
-             <p>Enter year</p>
-             <input type='text' value= {this.state.year} onChange={this.yearHandler} placeholder="year"/>
-             <p>Enter type of grapes</p>
-             <input type='text' value= {this.state.grapes} onChange={this.grapesHandler} placeholder="grapes type"/>
-             <p>Enter contry of origin</p>
-             <input type='text' value= {this.state.country} onChange={this.countryHandler} placeholder="country"/>
-             <p>Enter region of origin</p>
-             <input type='text' value= {this.state.region} onChange={this.regionHandler}  placeholder="region"/>
-             <p>Enter price of wine</p>
-             <input type='text' value= {this.state.price} onChange={this.priceHandler}  placeholder="price"/>
-             <p>Enter wine description</p>
-             <input type='text' value= {this.state.description} onChange={this.descriptionHandler}  placeholder="description"/>
-           <input type="submit" />
+              <div className="form">
+                <p>Enter wine name</p>
+                <input type='text' value= {this.state.name} onChange={this.nameHandler} placeholder="wine name"/>
+              </div>
+              <div className="form">
+                <p>Enter wine url link</p>
+                <input type='text' value= {this.state.pictureURL} onChange={this.pictureURLHandler} placeholder="picture url"/>
+              </div>
+              <div className="form">
+                <p>Enter year</p>
+                <input type='text' value= {this.state.year} onChange={this.yearHandler} placeholder="year"/>
+              </div>
+              <div className="form">
+                <p>Enter type of grapes</p>
+                <input type='text' value= {this.state.grapes} onChange={this.grapesHandler} placeholder="grapes type"/>
+              </div>
+              <div className="form">
+                <p>Enter contry of origin</p>
+                <input type='text' value= {this.state.country} onChange={this.countryHandler} placeholder="country"/>
+              </div>
+              <div className="form">
+                <p>Enter region of origin</p>
+                <input type='text' value= {this.state.region} onChange={this.regionHandler}  placeholder="region"/>
+              </div>
+              <div className="form">
+                <p>Enter price of wine</p>
+                <input type='text' value= {this.state.price} onChange={this.priceHandler}  placeholder="price"/>
+              </div>
+              <div className="form">
+                <p>Enter wine description</p>
+                <input type='text' value= {this.state.description} onChange={this.descriptionHandler}  placeholder="description"/>
+                <input type="submit" />
+              </div>
            </form>
           </div>
         );
