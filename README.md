@@ -10,3 +10,7 @@
     3. https://alligator.io/react/axios-react/
     4. https://reacttraining.com/react-router/core/guides/philosophy
 
+
+### Side Notes
+
+    In order for the new wine to appear on the page website has to be reloaded.
