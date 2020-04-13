@@ -1,8 +1,10 @@
 import React from 'react';
 import {Route, Switch, Link , BrowserRouter as Router} from "react-router-dom";
 import WineMenue from "./components/WineMenue";
-import WineForm from "./components/WineForm"
+import WineForm from "./components/WineForm";
+import AllWines from "./components/AllWines";
 import './App.css';
+import DeleteWine from "./components/DeleteWine";
 
 class App extends React.Component {
   constructor(props){
@@ -44,6 +46,9 @@ class App extends React.Component {
          <li>
            <Link to="/add_wine">Add wine</Link>
          </li>
+         <li>
+           <Link to="/delete">Delete</Link>
+         </li>
        </ul>
      </nav>
      <Switch>
@@ -77,6 +82,9 @@ class App extends React.Component {
        <Router path="/add_wine" exact component={"/add_wine"}>
          <Form />
        </Router>
+       <Router path="/delete" exact component={"/delete"}>
+         <Delete />
+       </Router>
      </Switch>
     </div>
     </Router>
@@ -88,35 +96,40 @@ function MainPage(){
   return (<div>
     <h1>Wlcome to wine menue</h1>
     <h2>Please choose wine</h2>
+    <AllWines />
+
   </div>)
 }
 function One(){
-return <WineMenue id={4896}/> 
+return <WineMenue id={5143}/> 
 }
 function Two(){
-return <WineMenue id={4897}/> 
+return <WineMenue id={5086}/> 
 }
 function Three(){
-return <WineMenue id={4898}/> 
+return <WineMenue id={5087}/> 
 }
 function Four(){
-return <WineMenue id={4899}/> 
+return <WineMenue id={5088}/> 
 }
 function Five(){
-return <WineMenue id={4900}/> 
+return <WineMenue id={5089}/> 
 }
 function Six(){
-return <WineMenue id={4901}/> 
+return <WineMenue id={5090}/> 
 }
 function Seven(){
-return <WineMenue id={4902}/> 
+return <WineMenue id={5091}/> 
 }
 function Eight(){
-return <WineMenue id={4903}/> 
+return <WineMenue id={5092}/> 
 }
 
 function Form(){
   return <WineForm />
+}
+function Delete(){
+  return <DeleteWine />
 }
 
 export default App;

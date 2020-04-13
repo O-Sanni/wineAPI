@@ -9,7 +9,7 @@ class WineMenue extends React.Component{
     super(props);
     this.state={
         id: props.id,
-        wineList:[]
+        wineList:null
     }
 }
 
@@ -25,12 +25,12 @@ async getWineList(){
 componentDidMount(){
     this.getWineList();
 }
-
-       
-    render(){   
-
-        return (
-            <div>
+checkIfWineExists(){
+if(this.state.wineList===null){
+    return "Sorry, information is not availiable or wine has been deleted.";
+}
+else{
+    return (<div>
             <h3>{this.state.wineList.name}</h3>
             <img src={this.state.wineList.picture} alt="wine" />
             <p>Year: {this.state.wineList.year}</p>
@@ -39,7 +39,13 @@ componentDidMount(){
             <p>Region: {this.state.wineList.region}</p>
             <p>Price: {this.state.wineList.price}</p>
             <p>Desctiption: {this.state.wineList.description}</p> 
-            </div>
+            <p>Wine Id: {this.state.wineList.id}</p> 
+            </div>)
+}
+}
+    render(){   
+
+        return (<div>{this.checkIfWineExists()}</div> 
         );
     }
 }
