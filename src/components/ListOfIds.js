@@ -13,8 +13,9 @@ class ListOfIds extends React.Component{
     }
     
     async getWineList(){
+        const key=process.env.REACT_APP_API_KEY_WINE;
         try{
-            const list= await axios.get(`http://myapi-profstream.herokuapp.com/api/466840/wines`)
+            const list= await axios.get(`http://myapi-profstream.herokuapp.com/api/${key}/wines`)
             this.setState({wineList: list.data});
         }
         catch(error){
