@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 import {Route, Switch, Link , BrowserRouter as Router} from "react-router-dom";
 import WineMenue from "./components/WineMenue";
 import WineForm from "./components/WineForm";
@@ -10,11 +11,48 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      wineId: ["/4897"]
+      wineId: null
     }
   }
+  async getWineList(){
+    try{
+        const list= await axios.get(`https://myapi-profstream.herokuapp.com/api/466840/wines/`)
+        this.setState({wineId: list.data});
+    }
+    catch(error){
+        console.log(error);
+    }
+}
+componentDidMount(){
+    this.getWineList();
+    console.log(this.state.wineId)
+}
+notNullLink(){
+    if (this.state.wineId===null){
+        return "wine not find";
+    }
+    else {
+        let wines=this.state.wineId.map((wine,index)=>
+          {return(<li>
+          <Link id={index} to={"/"+wine.id}>{wine.name}</Link>
+        </li>)})
+    return wines;
+          }
+    }
+notNullRoute(){
+    if (this.state.wineId===null){
+        return "wine not find";
+    }
+    else {
+        let wines=this.state.wineId.map((wine)=>
+          {return(<Route path={"/"+wine.id} exact component={"/"+wine.id}>
+          <WineMenue id={wine.id}/>
+          </Route>)})
+    return wines;
+          }
+    }
 
-  render(){
+render(){
   return (
     <Router>
     <div className="App">
@@ -23,65 +61,20 @@ class App extends React.Component {
          <li>
            <Link to="/">Main Page</Link>
          </li>
-         <li>
-           <Link to="/5422">Chateau De Saint Cosme</Link>
-         </li>
-         <li>
-         <Link to="/5423">Lan Rioja Crianza</Link></li>
-         <li>
-         <Link to="/5424">Margerum Sybarite</Link>
-         </li>
-         <li>
-           <Link to="/5425">Owen Roe "Ex Umbris"</Link>
-         </li>
-         <li>
-           <Link to="/5426">Rex Hill</Link>
-         </li>
-         <li>
-           <Link to="/5427">Viticcio Classico Riserva</Link>
-         </li>
-         <li>
-           <Link to="/5428">Chateau Le Doyenne</Link>
-         </li>
-         <li>
-           <Link to="/5429">Domaine Du Bouscat</Link>
-         </li>
+        {this.notNullLink()}
          <li>
            <Link to="/add_wine">Add wine</Link>
          </li>
          <li>
            <Link to="/delete">Delete</Link>
-         </li>
+         </li> 
        </ul>
      </nav>
      <Switch>
        <Route path="/" exact component={"/"}>
        <MainPage />
        </Route>
-       <Route path="/5422" exact component={"/5422"}>
-       <One />
-       </Route>
-       <Route path="/5423" exact component={"/5423"}>
-       <Two />
-       </Route>
-       <Route path="/5424" exact component={"/5424"}>
-       <Three />
-       </Route>
-       <Route path="/5425" exact component={"/5425"}>
-         <Four />
-       </Route>
-       <Route path="/5426" exact component={"/5426"}>
-         <Five />
-       </Route>
-       <Route path="/5427" exact component={"/5427"}>
-         <Six />
-       </Route>
-       <Route path="/5428" exact component={"/5428"}>
-         <Seven />
-       </Route>
-       <Route path="/5429" exact component={"/5429"}>
-         <Eight />
-       </Route>
+       {this.notNullRoute()}
        <Router path="/add_wine" exact component={"/add_wine"}>
          <Form />
        </Router>
@@ -103,30 +96,7 @@ function MainPage(){
 
   </div>)
 }
-function One(){
-return <WineMenue id={5422}/> 
-}
-function Two(){
-return <WineMenue id={5423}/> 
-}
-function Three(){
-return <WineMenue id={5424}/> 
-}
-function Four(){
-return <WineMenue id={5425}/> 
-}
-function Five(){
-return <WineMenue id={5426}/> 
-}
-function Six(){
-return <WineMenue id={5427}/> 
-}
-function Seven(){
-return <WineMenue id={5428}/> 
-}
-function Eight(){
-return <WineMenue id={5429}/> 
-}
+
 
 function Form(){
   return <WineForm />
