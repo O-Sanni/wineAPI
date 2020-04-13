@@ -24,27 +24,27 @@ class App extends React.Component {
            <Link to="/">Main Page</Link>
          </li>
          <li>
-           <Link to="/4896">Chateau De Saint Cosme</Link>
+           <Link to="/5422">Chateau De Saint Cosme</Link>
          </li>
          <li>
-         <Link to="/4897">Lan Rioja Crianza</Link></li>
+         <Link to="/5423">Lan Rioja Crianza</Link></li>
          <li>
-         <Link to="/4898">Margerum Sybarite</Link>
+         <Link to="/5424">Margerum Sybarite</Link>
          </li>
          <li>
-           <Link to="/4899">Owen Roe "Ex Umbris"</Link>
+           <Link to="/5425">Owen Roe "Ex Umbris"</Link>
          </li>
          <li>
-           <Link to="/4900">Rex Hill</Link>
+           <Link to="/5426">Rex Hill</Link>
          </li>
          <li>
-           <Link to="/4901">Viticcio Classico Riserva</Link>
+           <Link to="/5427">Viticcio Classico Riserva</Link>
          </li>
          <li>
-           <Link to="/4902">Chateau Le Doyenne</Link>
+           <Link to="/5428">Chateau Le Doyenne</Link>
          </li>
          <li>
-           <Link to="/4903">Domaine Du Bouscat</Link>
+           <Link to="/5429">Domaine Du Bouscat</Link>
          </li>
          <li>
            <Link to="/add_wine">Add wine</Link>
@@ -55,27 +55,31 @@ class App extends React.Component {
        </ul>
      </nav>
      <Switch>
-       <Route path="/" exact component={MainPage}>
+       <Route path="/" exact component={"/"}>
+       <MainPage />
        </Route>
-       <Route path="/" exact component={One}>
+       <Route path="/5422" exact component={"/5422"}>
+       <One />
        </Route>
-       <Route path="/4897" exact component={Two}>
+       <Route path="/5423" exact component={"/5423"}>
+       <Two />
        </Route>
-       <Route path="/4898" exact component={Three}>
+       <Route path="/5424" exact component={"/5424"}>
+       <Three />
        </Route>
-       <Route path="/4899" exact component={"/4899"}>
+       <Route path="/5425" exact component={"/5425"}>
          <Four />
        </Route>
-       <Route path="/4900" exact component={"/4900"}>
+       <Route path="/5426" exact component={"/5426"}>
          <Five />
        </Route>
-       <Route path="/4901" exact component={"/4901"}>
+       <Route path="/5427" exact component={"/5427"}>
          <Six />
        </Route>
-       <Route path="/4902" exact component={"/4902"}>
+       <Route path="/5428" exact component={"/5428"}>
          <Seven />
        </Route>
-       <Route path="/4903" exact component={"/4903"}>
+       <Route path="/5429" exact component={"/5429"}>
          <Eight />
        </Route>
        <Router path="/add_wine" exact component={"/add_wine"}>
@@ -100,28 +104,28 @@ function MainPage(){
   </div>)
 }
 function One(){
-return <WineMenue id={5143}/> 
+return <WineMenue id={5422}/> 
 }
 function Two(){
-return <WineMenue id={5086}/> 
+return <WineMenue id={5423}/> 
 }
 function Three(){
-return <WineMenue id={5087}/> 
+return <WineMenue id={5424}/> 
 }
 function Four(){
-return <WineMenue id={5088}/> 
+return <WineMenue id={5425}/> 
 }
 function Five(){
-return <WineMenue id={5089}/> 
+return <WineMenue id={5426}/> 
 }
 function Six(){
-return <WineMenue id={5090}/> 
+return <WineMenue id={5427}/> 
 }
 function Seven(){
-return <WineMenue id={5091}/> 
+return <WineMenue id={5428}/> 
 }
 function Eight(){
-return <WineMenue id={5092}/> 
+return <WineMenue id={5429}/> 
 }
 
 function Form(){
