@@ -32,11 +32,11 @@ notNullLink(){
         return "wine not find";
     }
     else {
-        let wines=this.state.wineId.map((wine,index)=>
-          {return(<li id={index}>
-          <Link to={"/"+wine.id}>{wine.name.toLowerCase()}</Link>
-        </li>)})
-    return wines;
+          let wines=this.state.wineId.map((wine)=>
+            {return(<li>
+            <Link to={"/"+wine.id}>{wine.name.toLowerCase()}</Link>
+            </li>)})
+          return wines;
           }
     }
 notNullRoute(){
@@ -44,15 +44,16 @@ notNullRoute(){
         return "wine not find";
     }
     else {
-        let wines=this.state.wineId.map((wine,index)=>
-          {return(<Route id={index+10} path={"/"+wine.id} exact component={"/"+wine.id}>
-          <WineMenue id={wine.id}/>
-          </Route>)})
-    return wines;
+          let wines=this.state.wineId.map((wine)=>
+            {return(<Route path={"/"+wine.id} exact component={"/"+wine.id}>
+             <WineMenue id={wine.id}/>
+            </Route>)})
+          return wines;
           }
     }
 
 render(){
+  
   return (
     <Router>
     <div className="App">
