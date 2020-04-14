@@ -33,8 +33,8 @@ notNullLink(){
     }
     else {
         let wines=this.state.wineId.map((wine,index)=>
-          {return(<li>
-          <Link id={index} to={"/"+wine.id}>{wine.name}</Link>
+          {return(<li id={index}>
+          <Link to={"/"+wine.id}>{wine.name.toLowerCase()}</Link>
         </li>)})
     return wines;
           }
@@ -44,8 +44,8 @@ notNullRoute(){
         return "wine not find";
     }
     else {
-        let wines=this.state.wineId.map((wine)=>
-          {return(<Route path={"/"+wine.id} exact component={"/"+wine.id}>
+        let wines=this.state.wineId.map((wine,index)=>
+          {return(<Route id={index+10} path={"/"+wine.id} exact component={"/"+wine.id}>
           <WineMenue id={wine.id}/>
           </Route>)})
     return wines;
@@ -61,26 +61,26 @@ render(){
          <li>
            <Link to="/">Main Page</Link>
          </li>
-        {this.notNullLink()}
          <li>
            <Link to="/add_wine">Add wine</Link>
          </li>
          <li>
            <Link to="/delete">Delete</Link>
          </li> 
+         {this.notNullLink()}
        </ul>
      </nav>
      <Switch>
        <Route path="/" exact component={"/"}>
        <MainPage />
-       </Route>
-       {this.notNullRoute()}
+       </Route> 
        <Router path="/add_wine" exact component={"/add_wine"}>
          <Form />
        </Router>
        <Router path="/delete" exact component={"/delete"}>
          <Delete />
        </Router>
+       {this.notNullRoute()}
      </Switch>
     </div>
     </Router>

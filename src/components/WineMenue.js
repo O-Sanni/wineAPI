@@ -33,7 +33,7 @@ checkIfWineExists(){
 }
 else{
     return (<div>
-                <h3>{this.state.wineList.name}</h3>
+                <h3>{this.state.wineList.name.toUpperCase()}</h3>
                 <img src={this.state.wineList.picture} alt="wine" />
                 <p>Year: {this.state.wineList.year}</p>
                 <p>Grapes: {this.state.wineList.grapes}</p>

@@ -26,16 +26,10 @@ notNull(){
         return "wine not find";
     }
     else {
-        let wines=this.state.wines.map(response=>{
-            return (<div>
-             <h3>{response.name}</h3>
-             <img src={response.picture} alt="wine" />
-             {/* <p>Year: {response.year}</p>
-             <p>Grapes: {response.grapes}</p>
-             <p>Country: {response.country}</p>
-             <p>Region: {response.region}</p>
-             <p>Price: {response.price}</p>
-             <p>Desctiption: {response.description}</p>  */}
+        let wines=this.state.wines.map((response,index)=>{
+            return (<div id={index}>
+             <h3 id={index+"15"} >{response.name}</h3>
+             <img id={index+"20"} src={response.picture} alt="wine" />
              </div> )});
              return wines;
     }

@@ -13,4 +13,5 @@
 
 ### Side Notes
 
-    In order for the new wine to appear on the page website has to be reloaded.
+    In order for the new wine to appear on the page website has to be reloaded. To be able to see a wine information from navigation first need to press main page, or delete or add wine and then name of wine
+

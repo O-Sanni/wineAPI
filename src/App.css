@@ -5,10 +5,11 @@ li{
   display:flex;
   width: 100px;
   list-style: none;
-  font-family: 'Playball', cursive;
+  font-family: 'Bellota', cursive;
   font-size: 20px;
   color: rgb(14, 66, 14);
 }
+
 
 ul{
   display: flex;
